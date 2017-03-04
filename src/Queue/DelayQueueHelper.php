@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class DelayQueueHelper {
 
 	/**
-	 * Calculate the delay in seconds to wait from now to the next [$from, $to] hours plage
+	 * Calculate the delay in seconds to wait from now to the next [$from, $to] hours interval
 	 * Ex :
 	 *   - To process a job between 6 and 7 : $from=6, $to=7
 	 *   - To process a job between 23 and 00 of the same day : $from=23, $to=0
