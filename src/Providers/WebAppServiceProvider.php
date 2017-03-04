@@ -10,6 +10,8 @@ namespace Enimiste\LaravelWebApp\Core\Providers;
 
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
+use Carbon\Carbon;
+use Enimiste\LaravelWebApp\Core\Console\DebugContainer;
 use Enimiste\LaravelWebApp\Core\Contracts\File\FileReaderInterface;
 use Enimiste\LaravelWebApp\Core\Contracts\File\FileWriterInterface;
 use Enimiste\LaravelWebApp\Core\Contracts\Report\ReportFromHtmlGeneratorInterface;
@@ -106,7 +108,19 @@ class WebAppServiceProvider extends BaseServiceProvider
         */
         if ($this->isLocal()) {
             $this->app->register(IdeHelperServiceProvider::class);
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
         }
+
+        /*
+		|--------------------------------------------------------------------------
+		| Localisation
+		|--------------------------------------------------------------------------
+		|
+		|
+		*/
+        Carbon::setLocale(config('app.locale'));//Localised dates for Carbon
+        setlocale(LC_ALL, config('app.locale_long'));//Localised dates for php
+
 
         /*
         |--------------------------------------------------------------------------
@@ -148,6 +162,16 @@ class WebAppServiceProvider extends BaseServiceProvider
         |
         */
         $this->app->bind(ReportFromHtmlGeneratorInterface::class, WkhtmltopdfReportGenerator::class);
+
+        /*
+        |--------------------------------------------------------------------------
+        | Register commands
+        |--------------------------------------------------------------------------
+        |
+        */
+        $this->commands([
+            $this->app->make(DebugContainer::class),
+        ]);
     }
 
     /**

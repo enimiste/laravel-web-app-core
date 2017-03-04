@@ -93,3 +93,42 @@ if (!function_exists('add_if_macosx')) {
         return $config;
     }
 }
+
+/*
+|--------------------------------------------------------------------------
+| Date helpers
+|--------------------------------------------------------------------------
+|
+|
+*/
+if ( ! function_exists( 'to_french_month' ) ) {
+    /**
+     * @param string $month 01, 02, 03, ... 12
+     *
+     * @return string Janvier, Février, Mars, ..., Décembre
+     * @throws Exception
+     */
+    function to_french_month( $month ) {
+        $month  = trim( $month );
+        $months = [
+            '01' => 'Janvier',
+            '02' => 'Février',
+            '03' => 'Mars',
+            '04' => 'Avril',
+            '05' => 'Mai',
+            '06' => 'Juin',
+            '07' => 'Juillet',
+            '08' => 'Août',
+            '09' => 'Septembre',
+            '10' => 'Octobre',
+            '11' => 'Novembre',
+            '12' => 'Décembre',
+        ];
+
+        if ( ! array_key_exists( $month, $months ) ) {
+            throw new \Exception( sprintf( "Month %s invalid", $month ) );
+        }
+
+        return $months[ $month ];
+    }
+}

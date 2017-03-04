@@ -3,6 +3,7 @@
 namespace Enimiste\LaravelWebApp\Core\Jobs;
 
 
+use Carbon\Carbon;
 use Enimiste\LaravelWebApp\Core\Queue\DelayQueueHelper;
 use Illuminate\Bus\Queueable;
 
@@ -21,6 +22,17 @@ abstract class BaseBusinessJob
 
     use Queueable;
 
+    /** @var Carbon */
+    protected $jobCreatedOn;
+    /** @var  string */
+    protected $dispatchedByUserEmail;
+
+    public function __construct()
+    {
+        $this->jobCreatedOn = Carbon::now();
+        $this->dispatchedByUserEmail = app('authenticated_user_email');
+    }
+
     /**
      * Delay in seconds to wait from now to the next [$from, $to] hours interval
      * Ex :
@@ -33,5 +45,21 @@ abstract class BaseBusinessJob
     public function shouldBeProcessedBetweenH($from, $to)
     {
         $this->delay(DelayQueueHelper::shouldBeProcessedBetweenH($from, $to));
+    }
+
+    /**
+     * @return Carbon
+     */
+    public function getJobCreatedOn()
+    {
+        return $this->jobCreatedOn->copy();
+    }
+
+    /**
+     * @return string
+     */
+    public function getDispatchedByUserEmail()
+    {
+        return $this->dispatchedByUserEmail;
     }
 }

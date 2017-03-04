@@ -21,7 +21,10 @@
     "setasign/fpdi-fpdf": "1.6.1",
     "doctrine/dbal": "2.3.5",
     "enimiste/l5-math": "^1.1",
-    "league/csv": "^8.0"
+    "league/csv": "^8.0",
+    "jschaedl/iban": "1.1.6",
+    "pixelpeter/laravel5-isocodes-validation": "^1.0",
+    "barryvdh/laravel-debugbar": "^2.2"
   },
   "autoload": {
     "psr-4": {
