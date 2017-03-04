@@ -1,13 +1,21 @@
 {
-    "name": "enimiste/web-app-core",
-    "description": "Web app foundation php code",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "El bachir NOUNI",
-            "email": "nouni.elbachir@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "enimiste/web-app-core",
+  "description": "Laravel 5.* Web app foundation php code",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "El bachir NOUNI",
+      "email": "nouni.elbachir@gmail.com"
+    }
+  ],
+  "require": {
+    "illuminate/contracts": "5.3.*",
+    "illuminate/support": "5.3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Enimiste\\LaravelWebApp\\Core\\": "src"
+    }
+  }
 }
