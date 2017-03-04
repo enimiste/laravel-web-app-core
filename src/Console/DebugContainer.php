@@ -3,10 +3,9 @@
 namespace Enimiste\LaravelWebApp\Core\Console;
 
 use Illuminate\Console\Application;
-use Illuminate\Console\Command;
 use Illuminate\Container\Container;
 
-class DebugContainer extends Command
+class DebugContainer extends BaseBusinessCommand
 {
     /**
      * The name and signature of the console command.

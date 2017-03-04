@@ -9,8 +9,10 @@
 use Enimiste\LaravelWebApp\Core\Contracts\File\FileWriterInterface;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Debug\Dumper;
 use Intervention\Image\ImageCache;
 use Intervention\Image\ImageManager;
+use Stringy\Stringy;
 
 if (!function_exists('array_nth')) {
     /**
@@ -101,15 +103,16 @@ if (!function_exists('add_if_macosx')) {
 |
 |
 */
-if ( ! function_exists( 'to_french_month' ) ) {
+if (!function_exists('to_french_month')) {
     /**
      * @param string $month 01, 02, 03, ... 12
      *
      * @return string Janvier, Février, Mars, ..., Décembre
      * @throws Exception
      */
-    function to_french_month( $month ) {
-        $month  = trim( $month );
+    function to_french_month($month)
+    {
+        $month = trim($month);
         $months = [
             '01' => 'Janvier',
             '02' => 'Février',
@@ -125,10 +128,39 @@ if ( ! function_exists( 'to_french_month' ) ) {
             '12' => 'Décembre',
         ];
 
-        if ( ! array_key_exists( $month, $months ) ) {
-            throw new \Exception( sprintf( "Month %s invalid", $month ) );
+        if (!array_key_exists($month, $months)) {
+            throw new \Exception(sprintf("Month %s invalid", $month));
         }
 
-        return $months[ $month ];
+        return $months[$month];
     }
+}
+
+if (!function_exists('dd_many')) {
+    /**
+     * Dump the passed variables and end the script.
+     *
+     * @param  mixed
+     * @return void
+     */
+    function dd_many()
+    {
+        array_map(function ($x) {
+            (new Dumper)->dump($x);
+        }, func_get_args());
+    }
+}
+
+if (!function_exists('s')) {
+    /**
+     * Dump the passed variables and end the script.
+     *
+     * @param  string
+     * @return Stringy
+     */
+    function s($s)
+    {
+        return Stringy::create($s);
+    }
+
 }

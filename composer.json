@@ -10,10 +10,10 @@
     }
   ],
   "require": {
-    "php": ">=5.6",
+    "php": ">=5.6.4",
     "laravel/framework": "5.3.*",
     "webmozart/assert": "^1.2",
-    "ramsey/uuid": "^3.1",
+    "ramsey/uuid": "^3.5",
     "nesbot/carbon": "1.22.*",
     "tymon/jwt-auth": "0.5.*",
     "intervention/image": "^2.3",
@@ -24,7 +24,11 @@
     "league/csv": "^8.0",
     "jschaedl/iban": "1.1.6",
     "pixelpeter/laravel5-isocodes-validation": "^1.0",
-    "barryvdh/laravel-debugbar": "^2.2"
+    "barryvdh/laravel-debugbar": "^2.2",
+    "lord/laroute": "^2.3",
+    "laravelcollective/html": "5.3.*",
+    "enimiste/knp-menu-laravel": "2.*",
+    "danielstjules/stringy": "2.3.2"
   },
   "autoload": {
     "psr-4": {
