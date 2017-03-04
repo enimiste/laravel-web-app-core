@@ -11,17 +11,10 @@
   ],
   "require": {
     "php": ">=5.5.9",
-    "illuminate/contracts": "5.3.*",
-    "illuminate/support": "5.3.*",
-    "illuminate/database": "5.3.*",
-    "illuminate/bus": "5.3.*",
-    "illuminate/pagination": "5.3.*",
-    "illuminate/validation": "5.3.*",
-    "illuminate/http": "5.3.*",
+    "laravel/framework": "5.3.*",
     "webmozart/assert": "^1.2",
     "ramsey/uuid": "^3.1",
     "nesbot/carbon": "1.22.*",
-    "symfony/process": "3.1.*",
     "tymon/jwt-auth": "0.5.*",
     "intervention/image": "^2.3",
     "setasign/fpdi-fpdf": "1.6.1"

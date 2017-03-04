@@ -4,7 +4,7 @@ namespace Enimiste\LaravelWebApp\Core\Annotations;
 
 /**
  * Class FiresEvents
- * @package Org\Asso\Annotations
+ * @package Enimiste\LaravelWebApp\Core\Annotations
  *
  * @Annotation
  */
