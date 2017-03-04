@@ -28,7 +28,8 @@
       "Enimiste\\LaravelWebApp\\Core\\": "src"
     },
     "files": [
-      "src/helpers.php"
+      "src/helpers.php",
+      "libs/Pdf/Bootstrap.php"
     ]
   },
   "require-dev": {
