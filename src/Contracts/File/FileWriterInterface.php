@@ -1,6 +1,6 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts\File;
+namespace Enimiste\LaravelWebApp\Core\Contracts\File;
 
 
 interface FileWriterInterface

@@ -6,7 +6,7 @@
  * Time: 13:23
  */
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts;
+namespace Enimiste\LaravelWebApp\Core\Business;
 
 
 use Enimiste\LaravelWebApp\Core\Exception\BusinessException;

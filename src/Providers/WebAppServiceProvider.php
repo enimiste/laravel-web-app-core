@@ -10,10 +10,10 @@ namespace Enimiste\LaravelWebApp\Core\Providers;
 
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
-use Enimiste\LaravelWebApp\Core\Business\Contracts\File\FileReaderInterface;
-use Enimiste\LaravelWebApp\Core\Business\Contracts\File\FileWriterInterface;
-use Enimiste\LaravelWebApp\Core\Business\File\PHPFileReader;
-use Enimiste\LaravelWebApp\Core\Business\File\PHPFileWriter;
+use Enimiste\LaravelWebApp\Core\Contracts\File\FileReaderInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\File\FileWriterInterface;
+use Enimiste\LaravelWebApp\Core\File\PHPFileReader;
+use Enimiste\LaravelWebApp\Core\File\PHPFileWriter;
 use Enimiste\LaravelWebApp\Core\Exception\ContainerException;
 
 class WebAppServiceProvider extends BaseServiceProvider

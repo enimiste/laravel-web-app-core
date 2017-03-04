@@ -1,7 +1,9 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts\File;
+namespace Enimiste\LaravelWebApp\Core\Contracts\File;
 
+
+use Enimiste\LaravelWebApp\Core\Exception\BusinessException;
 
 interface FileReaderInterface
 {
@@ -11,7 +13,7 @@ interface FileReaderInterface
      *
      * @return string
      *
-     * @throws \Exception
+     * @throws BusinessException
      */
     function getContents($filePath);
 }

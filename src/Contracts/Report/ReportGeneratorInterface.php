@@ -1,6 +1,6 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts\Report;
+namespace Enimiste\LaravelWebApp\Core\Contracts\Report;
 
 
 interface ReportGeneratorInterface {

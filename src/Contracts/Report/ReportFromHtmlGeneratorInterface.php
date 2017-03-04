@@ -1,6 +1,7 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts\Report;
+namespace Enimiste\LaravelWebApp\Core\Contracts\Report;
+use Enimiste\LaravelWebApp\Core\Exception\BusinessException;
 
 /**
  * This interface define the contract of report generator that will uses html as input.
@@ -11,7 +12,7 @@ namespace Enimiste\LaravelWebApp\Core\Business\Contracts\Report;
  * If the tow option are setted by the user, the view one have a high level
  *
  * Interface ReportFromHtmlGeneratorInterface
- * @package Enimiste\LaravelWebApp\Core\Business\Contracts\Report
+ * @package Enimiste\LaravelWebApp\Core\Contracts\Report
  */
 interface ReportFromHtmlGeneratorInterface extends ReportGeneratorInterface
 {
@@ -44,7 +45,7 @@ interface ReportFromHtmlGeneratorInterface extends ReportGeneratorInterface
      *
      * @return string
      *
-     * @throws \RuntimeException
+     * @throws BusinessException
      */
     function setUrlGenerator(\Closure $func);
 }

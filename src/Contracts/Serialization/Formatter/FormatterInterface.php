@@ -1,6 +1,6 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts\Serialization\Formatter;
+namespace Enimiste\LaravelWebApp\Core\Contracts\Serialization\Formatter;
 
 
 interface FormatterInterface

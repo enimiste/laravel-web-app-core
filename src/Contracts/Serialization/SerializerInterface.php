@@ -1,6 +1,6 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts\Serialization;
+namespace Enimiste\LaravelWebApp\Core\Contracts\Serialization;
 
 
 use Illuminate\Database\Eloquent\Model;

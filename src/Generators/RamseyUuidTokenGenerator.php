@@ -1,8 +1,8 @@
 <?php
-namespace Enimiste\LaravelWebApp\Core\Business\Generators;
+namespace Enimiste\LaravelWebApp\Core\Generators;
 
 
-use Enimiste\LaravelWebApp\Core\Business\Contracts\TokenGeneratorInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\TokenGeneratorInterface;
 use Ramsey\Uuid\Uuid;
 
 class RamseyUuidTokenGenerator implements TokenGeneratorInterface

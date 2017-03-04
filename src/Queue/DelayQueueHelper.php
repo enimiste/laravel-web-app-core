@@ -1,6 +1,6 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Queue;
+namespace Enimiste\LaravelWebApp\Core\Queue;
 
 
 use Carbon\Carbon;

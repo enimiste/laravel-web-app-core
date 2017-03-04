@@ -1,9 +1,10 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\File;
+namespace Enimiste\LaravelWebApp\Core\File;
 
 
-use Enimiste\LaravelWebApp\Core\Business\Contracts\File\FileReaderInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\File\FileReaderInterface;
+use Enimiste\LaravelWebApp\Core\Exception\BusinessException;
 
 class PHPFileReader implements FileReaderInterface {
 
@@ -12,7 +13,7 @@ class PHPFileReader implements FileReaderInterface {
 	 *
 	 * @return string
 	 *
-	 * @throws \Exception
+	 * @throws BusinessException
 	 */
 	function getContents( $filePath ) {
 		return file_get_contents( $filePath );

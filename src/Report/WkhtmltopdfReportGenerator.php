@@ -1,9 +1,9 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\Report;
+namespace Enimiste\LaravelWebApp\Core\Report;
 
 
-use Enimiste\LaravelWebApp\Core\Business\Contracts\Report\ReportFromHtmlGeneratorInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\Report\ReportFromHtmlGeneratorInterface;
 use Enimiste\LaravelWebApp\Core\Exception\BusinessException;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
@@ -122,7 +122,7 @@ class WkhtmltopdfReportGenerator implements ReportFromHtmlGeneratorInterface
      *
      * @return string
      *
-     * @throws \RuntimeException
+     * @throws BusinessException
      */
     function setUrlGenerator(\Closure $func)
     {

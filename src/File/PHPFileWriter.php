@@ -1,9 +1,9 @@
 <?php
 
-namespace Enimiste\LaravelWebApp\Core\Business\File;
+namespace Enimiste\LaravelWebApp\Core\File;
 
 
-use Enimiste\LaravelWebApp\Core\Business\Contracts\File\FileWriterInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\File\FileWriterInterface;
 
 class PHPFileWriter implements FileWriterInterface
 {

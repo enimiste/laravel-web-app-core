@@ -1,5 +1,5 @@
 <?php
-namespace Enimiste\LaravelWebApp\Core\Business\Contracts;
+namespace Enimiste\LaravelWebApp\Core\Contracts;
 
 
 interface TokenGeneratorInterface
