@@ -15,6 +15,7 @@
     "illuminate/support": "5.3.*",
     "illuminate/database": "5.3.*",
     "illuminate/bus": "5.3.*",
+    "illuminate/pagination": "5.3.*",
     "webmozart/assert": "^1.2",
     "ramsey/uuid": "^3.1",
     "nesbot/carbon": "1.22.*",
