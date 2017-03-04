@@ -1,0 +1,13 @@
+{
+    "name": "enimiste/web-app-core",
+    "description": "Web app foundation php code",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "El bachir NOUNI",
+            "email": "nouni.elbachir@gmail.com"
+        }
+    ],
+    "require": {}
+}
