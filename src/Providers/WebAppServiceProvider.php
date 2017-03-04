@@ -12,9 +12,13 @@ namespace Enimiste\LaravelWebApp\Core\Providers;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Enimiste\LaravelWebApp\Core\Contracts\File\FileReaderInterface;
 use Enimiste\LaravelWebApp\Core\Contracts\File\FileWriterInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\Report\ReportFromHtmlGeneratorInterface;
+use Enimiste\LaravelWebApp\Core\Contracts\TokenGeneratorInterface;
+use Enimiste\LaravelWebApp\Core\Exception\ContainerException;
 use Enimiste\LaravelWebApp\Core\File\PHPFileReader;
 use Enimiste\LaravelWebApp\Core\File\PHPFileWriter;
-use Enimiste\LaravelWebApp\Core\Exception\ContainerException;
+use Enimiste\LaravelWebApp\Core\Generators\RamseyUuidTokenGenerator;
+use Enimiste\LaravelWebApp\Core\Report\WkhtmltopdfReportGenerator;
 
 class WebAppServiceProvider extends BaseServiceProvider
 {
@@ -43,13 +47,38 @@ class WebAppServiceProvider extends BaseServiceProvider
     public function register()
     {
         /*
-         * For dev environment only
-         */
+        |--------------------------------------------------------------------------
+        | For dev environment only
+        |--------------------------------------------------------------------------
+        |
+        */
         if ($this->isLocal()) {
             $this->app->register(IdeHelperServiceProvider::class);
         }
 
+        /*
+        |--------------------------------------------------------------------------
+        | Local File I/O
+        |--------------------------------------------------------------------------
+        |
+        */
         $this->app->bind(FileReaderInterface::class, PHPFileReader::class);
         $this->app->bind(FileWriterInterface::class, PHPFileWriter::class);
+
+        /*
+        |--------------------------------------------------------------------------
+        | Id Generators
+        |--------------------------------------------------------------------------
+        |
+        */
+        $this->app->bind(TokenGeneratorInterface::class, RamseyUuidTokenGenerator::class);
+
+        /*
+        |--------------------------------------------------------------------------
+        | Html to pdf report generator
+        |--------------------------------------------------------------------------
+        |
+        */
+        $this->app->bind(ReportFromHtmlGeneratorInterface::class, WkhtmltopdfReportGenerator::class);
     }
 }
