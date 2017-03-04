@@ -10,19 +10,26 @@
     }
   ],
   "require": {
-    "php": ">=5.5.9",
+    "php": ">=5.6",
     "laravel/framework": "5.3.*",
     "webmozart/assert": "^1.2",
     "ramsey/uuid": "^3.1",
     "nesbot/carbon": "1.22.*",
     "tymon/jwt-auth": "0.5.*",
     "intervention/image": "^2.3",
-    "setasign/fpdi-fpdf": "1.6.1"
+    "intervention/imagecache": "^2.3",
+    "setasign/fpdi-fpdf": "1.6.1",
+    "doctrine/dbal": "2.3.5",
+    "enimiste/l5-math": "^1.1",
+    "league/csv": "^8.0"
   },
   "autoload": {
     "psr-4": {
       "Enimiste\\LaravelWebApp\\Core\\": "src"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
