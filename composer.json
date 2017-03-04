@@ -1,5 +1,5 @@
 {
-  "name": "enimiste/web-app-core",
+  "name": "enimiste/laravel-web-app-core",
   "description": "Laravel 5.* Web app foundation php code",
   "type": "library",
   "license": "MIT",
