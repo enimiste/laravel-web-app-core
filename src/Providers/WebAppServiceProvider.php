@@ -19,6 +19,7 @@ use Enimiste\LaravelWebApp\Core\File\PHPFileReader;
 use Enimiste\LaravelWebApp\Core\File\PHPFileWriter;
 use Enimiste\LaravelWebApp\Core\Generators\RamseyUuidTokenGenerator;
 use Enimiste\LaravelWebApp\Core\Report\WkhtmltopdfReportGenerator;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class WebAppServiceProvider extends BaseServiceProvider
 {
@@ -56,6 +57,22 @@ class WebAppServiceProvider extends BaseServiceProvider
             $this->app->register(IdeHelperServiceProvider::class);
         }
 
+        /*
+        |--------------------------------------------------------------------------
+        | Authentication
+        |--------------------------------------------------------------------------
+        |
+        */
+        $this->app->bind('authenticated_user_email', function () {
+            $u = $this->app->make(Authenticatable::class);
+            if (!is_null($u)) return $u->email;
+            else {
+                if ($this->app->make('running_from_artisan'))
+                    return 'SYSTEM';
+                else return 'NOT_AUTHENTICATED';
+            }
+        });
+        
         /*
         |--------------------------------------------------------------------------
         | Local File I/O
